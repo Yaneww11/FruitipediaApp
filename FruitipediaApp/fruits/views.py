@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from FruitipediaApp.fruits.forms import CategoryAddForm
 from FruitipediaApp.fruits.models import Fruit
 
 
@@ -34,4 +36,17 @@ def delete_view(request, pk):
 
 
 def create_category(request):
-    return render(request, 'categories/create-category.html')
+    if request.method == 'GET':
+        form = CategoryAddForm()
+    else:
+        form = CategoryAddForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            return redirect('dashboard')
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'categories/create-category.html', context)
