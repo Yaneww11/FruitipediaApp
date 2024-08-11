@@ -54,8 +54,8 @@ The **Fruitipedia App** is a web application developed using Django, designed to
 ## Technologies Used
 - **Backend:** Django, Python
 - **Frontend:** HTML, CSS
-- **Database:** SQLite (Django ORM)
-- **Tools:** Git, VS Code
+- **Database:** Postgres (Django ORM)
+- **Tools:** Git, PyCharm
 
 ## Outcome
 The **Fruitipedia App** successfully demonstrates the use of Django ORM, template inheritance, and full-stack development using Django. The project serves as a practical example of creating a scalable and maintainable web application with Django.
