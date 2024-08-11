@@ -23,7 +23,7 @@ class Fruit(models.Model):
         blank=False,
         validators=[
             MinLengthValidator(2),
-            OnlyLettersValidator()
+            OnlyLettersValidator(),
         ]
     )
 

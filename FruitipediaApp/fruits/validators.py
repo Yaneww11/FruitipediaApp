@@ -7,7 +7,7 @@ class OnlyLettersValidator:
 
     def __call__(self, value: str):
         if not value.isalpha():
-            return ValidationError(self.message)
+            raise ValidationError(self.message)
 
     def deconstruct(self):
         return (
