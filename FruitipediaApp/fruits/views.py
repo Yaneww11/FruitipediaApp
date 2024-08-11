@@ -28,13 +28,18 @@ class CreateFruitView(CreateView):
     success_url = reverse_lazy('dashboard')
 
 
-
 def edit_view(request, pk):
     return render(request, 'fruits/edit-fruit.html')
 
 
 def details_view(request, pk):
-    return render(request, 'fruits/details-fruit.html')
+    fruit = Fruit.objects.get(pk=pk)
+
+    context = {
+        'fruit': fruit,
+    }
+
+    return render(request, 'fruits/details-fruit.html', context)
 
 
 def delete_view(request, pk):
